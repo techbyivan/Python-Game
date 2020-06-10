@@ -15,7 +15,7 @@ class Pet:
     def get_love(self):
         self.happiness += 30
     
-    def get_timeout(self):
+    def give_timeout(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
 
@@ -27,6 +27,9 @@ print("Grayson's Happiness: "+ str(grayson.happiness))
 
 boog = Pet("Boog")
 boog.get_love()
+print("Boog's Happiness: "+ str(boog.happiness))
+boog.give_timeout()
+
 
 print("Boog's Fullness: " + str(boog.fullness))
 print("Boog's Happiness: "+ str(boog.happiness))

@@ -1,5 +1,3 @@
-# https://learn.digitalcrafts.com/immersive/lessons/solving-problems-using-code/object-oriented-programming/#learning-objectives
-
 # 1. Virtual Pet:
 
 # You can come up with your own solution or you can use the walk through 

@@ -3,7 +3,6 @@ class Pet:
         self.name = name
         self.fullness = fullness
         self.happiness = happiness
-        self.discipline = discipline
         self.hunger = hunger
         self.mopiness = mopiness
 
@@ -16,20 +15,21 @@ class Pet:
     def get_love(self):
         self.happiness += 30
     
-    def get_disciplined(self):
+    def get_timeout(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
 
 grayson = Pet("Grayson")
 grayson.eat_food()
-print(grayson.fullness)
-# 80
-print(grayson.happiness)
-# 50
+
+print("Grayson's Fullness: " + str(grayson.fullness))
+print("Grayson's Happiness: "+ str(grayson.happiness))
 
 boog = Pet("Boog")
 boog.get_love()
-print(grayson.fullness)
-# 50
-print(boog.happiness)
-# 80
+
+print("Boog's Fullness: " + str(boog.fullness))
+print("Boog's Happiness: "+ str(boog.happiness))
+
+class HappyPet(Pet):
+    pass

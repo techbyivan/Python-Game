@@ -28,8 +28,7 @@ class Pet:
 
 boogie = Pet("Boogie", 70, 5, 80, 90)
 
-print(boogie.happiness) 
-print(boogie.fullness) 
+
 
 
 

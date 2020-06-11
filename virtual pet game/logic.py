@@ -1,4 +1,4 @@
-from vp-game import Pet, CuddlyPet
+from vp_game import Pet
 
 # Begin with no pets.
 pets = []
@@ -20,7 +20,7 @@ def choices_to_string(choice_list):
     for choice in choice_list:
         choice_string += "%d: %s\n" % (num, choice)
         num += 1
-    choice_string += "Please choose an option: "
+    choice_string += "Please choose an option: \n"
     return choice_string
 
 def get_user_choice(choice_list):
@@ -38,4 +38,10 @@ def get_user_choice(choice_list):
 def main():    
     while True:
         choice = get_user_choice(main_menu)
+        if choice == 1:
+            pet_name = input("\nWhat would you like to name your pet? \n")
+            pets.append(Pet(pet_name))
+            print("\nYou now have %d pets \n" % len(pets))
+
+
 main()

@@ -5,6 +5,7 @@ class Pet:
         self.happiness = happiness
         self.hunger = hunger
         self.mopiness = mopiness
+        self.toys = []
 
     def get_name(self):
         self.name = ""
@@ -18,6 +19,9 @@ class Pet:
     def give_timeout(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
+
+    def get_toy(self, toy):
+        self.toys.append(toy)
     
     def __str__(self):
         return """

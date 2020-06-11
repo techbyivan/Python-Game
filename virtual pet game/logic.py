@@ -1,23 +1,24 @@
 from vp_game import Pet
-from toys import toy
+from toys import Toy
 
 # Begin with no pets.
 pets = []
 
 pets_name = []
 
-main_menu = [   
+main_menu = [  
     "Adopt a Pet",
     "Play with Pet",
     "Feed Pet",
     "View status of pets",
     "Do nothing",
+    "Give a toy to all your pets",
 ]
 
 adoption_menu = [   
-    "dog",
-    "bird",
-    "cat",
+    "Dog",
+    "Bird",
+    "Cat",
 ]
 
 
@@ -56,7 +57,10 @@ def main():
                 pets.append(Pet(pet_name))
             elif type_choice == 2:
                 pets.append(CuddlyPet(pet_name))
-            print("\n\nYou now have %d pets \n\n" % len(pets))
+            if len(pets) < 2:
+                print("\n\nYou now have %d pet. Congratulations!!!\n\n" % len(pets))
+            elif len(pets) >= 2:
+                print("\n\nYou now have %d pets \n\n" % len(pets))
         if choice == 2:
             for pet in pets:
                 pet.get_love()
@@ -67,8 +71,11 @@ def main():
             for pet in pets:
                 print(pet)
         if choice == 5:
-            # Pet levels naturally lower.
+            for pet in pets:
+                pet.get_toy(Toy())
+        if choice == 6:
             for pet in pets:
                 pet.be_alive()
+            self.happiness += toy.use()
             
 main()

@@ -25,3 +25,10 @@ class Pet:
         Fullness: %d
         Happiness: %d
         """ % (self.name, self.fullness, self.happiness)
+
+boogie = Pet("Boogie", 70, 5, 80, 90)
+
+print(boogie.happiness)
+
+
+

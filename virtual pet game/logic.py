@@ -1,7 +1,10 @@
 from vp_game import Pet
+from toys import toy
 
 # Begin with no pets.
 pets = []
+
+pets_name = []
 
 main_menu = [   
     "Adopt a Pet",
@@ -47,13 +50,13 @@ def main():
         choice = get_user_choice(main_menu)
         if choice == 1:
             pet_name = input("\nWhat would you like to name your pet? \n")
-            print("\nPlease choose your pet type: \n")
+            print("\nWhat type of pet would you like?  \n")
             type_choice = get_user_choice(adoption_menu)
             if type_choice == 1:
                 pets.append(Pet(pet_name))
             elif type_choice == 2:
                 pets.append(CuddlyPet(pet_name))
-            print("\n\nYou now have %d pets" % len(pets))
+            print("\n\nYou now have %d pets \n\n" % len(pets))
         if choice == 2:
             for pet in pets:
                 pet.get_love()

@@ -18,21 +18,10 @@ class Pet:
     def give_timeout(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
-
-grayson = Pet("Grayson")
-grayson.eat_food()
-
-print("Grayson's Fullness: " + str(grayson.fullness))
-print("Grayson's Happiness: "+ str(grayson.happiness))
-
-boog = Pet("Boog")
-boog.get_love()
-print("Boog's Happiness: "+ str(boog.happiness))
-boog.give_timeout()
-
-
-print("Boog's Fullness: " + str(boog.fullness))
-print("Boog's Happiness: "+ str(boog.happiness))
-
-class HappyPet(Pet):
-    pass
+    
+    def __str__(self):
+        return """
+        %s:
+        Fullness: %d
+        Happiness: %d
+        """ % (self.name, self.fullness, self.happiness)

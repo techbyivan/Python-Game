@@ -11,8 +11,15 @@ main_menu = [
     "Do nothing",
 ]
 
+adoption_menu = [   
+    "dog",
+    "bird",
+    "cat",
+]
+
+
 def print_menu_error():
-    print("That was not a valid choice. Try again.\n\n\n")    
+    print("\nThat was not a valid choice. Try again.\n\n\n")    
 
 def choices_to_string(choice_list):
     choice_string = ""
@@ -20,7 +27,7 @@ def choices_to_string(choice_list):
     for choice in choice_list:
         choice_string += "%d: %s\n" % (num, choice)
         num += 1
-    choice_string += "Please choose an option: \n"
+    choice_string += "\nPlease choose an option: \n"
     return choice_string
 
 def get_user_choice(choice_list):
@@ -40,8 +47,25 @@ def main():
         choice = get_user_choice(main_menu)
         if choice == 1:
             pet_name = input("\nWhat would you like to name your pet? \n")
-            pets.append(Pet(pet_name))
-            print("\nYou now have %d pets \n" % len(pets))
-
-
+            print("\nPlease choose your pet type: \n")
+            type_choice = get_user_choice(adoption_menu)
+            if type_choice == 1:
+                pets.append(Pet(pet_name))
+            elif type_choice == 2:
+                pets.append(CuddlyPet(pet_name))
+            print("\n\nYou now have %d pets" % len(pets))
+        if choice == 2:
+            for pet in pets:
+                pet.get_love()
+        if choice == 3:
+            for pet in pets:
+                pet.eat_food()
+        if choice == 4:
+            for pet in pets:
+                print(pet)
+        if choice == 5:
+            # Pet levels naturally lower.
+            for pet in pets:
+                pet.be_alive()
+            
 main()

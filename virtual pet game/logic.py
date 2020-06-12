@@ -1,5 +1,6 @@
 from vp_game import Pet
 from toys import Toy
+from vp_game import CuddlyPet
 
 # Begin with no pets.
 pets = []
@@ -58,9 +59,9 @@ def main():
             elif type_choice == 2:
                 pets.append(CuddlyPet(pet_name))
             if len(pets) < 2:
-                print("\n\nYou now have %d pet. Congratulations!!!\n\n" % len(pets))
+                print("\n\nCongratulations!!! You now have %d pet.\n\n" % len(pets))
             elif len(pets) >= 2:
-                print("\n\nYou now have %d pets \n\n" % len(pets))
+                print("\n\nYou now have %d pets! \n\n" % len(pets))
         if choice == 2:
             for pet in pets:
                 pet.get_love()
@@ -77,5 +78,6 @@ def main():
             for pet in pets:
                 pet.be_alive()
             self.happiness += toy.use()
+
             
 main()

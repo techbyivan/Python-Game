@@ -51,7 +51,7 @@ def main():
         choice = get_user_choice(main_menu)
         if choice == 1:
             pet_name = input("\nWhat would you like to name your pet? \n")
-            print("\nWhat type of pet would you like?  \n")
+            print("\nWhat type of pet would you like today?  \n")
             type_choice = get_user_choice(adoption_menu)
             if type_choice == 1:
                 pets.append(Pet(pet_name))

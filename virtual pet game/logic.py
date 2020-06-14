@@ -77,9 +77,9 @@ def main():
         if choice == 6:
             for pet in pets:
                 pet.be_alive()
-        if choice == 6:
-            for pet in pets:
-                pet.be_alive()
+        # if choice == 6:
+        #     for pet in pets:
+        #         pet.be_alive()
             self.happiness += toy.use()
 
 

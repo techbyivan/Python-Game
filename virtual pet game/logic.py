@@ -37,7 +37,7 @@ main_menu = [
     "Play with Pet",
     "Feed Pet",
     "View status of pets",
-    "Give pet a timeout",
+    "Give pets a timeout",
     "Give a toy to all your pets",
     "Give a pet up for adoption"
 ]
@@ -67,7 +67,10 @@ def get_user_choice(choice_list):
     while choice == -1:
         try:
             choice = int(input(choice_string))
-            if choice <= 0 or choice > len(choice_list):
+            if choice == 8:
+                print("\nYou have now exited the game. Thank you!! \n")
+                exit()                
+            elif choice <= 0 or choice > len(choice_list):
                 raise ValueError
         except ValueError:
             print_menu_error()
@@ -92,12 +95,10 @@ def main():
                 pets.append(Pet(pet_name))
             elif type_choice == 3:
                 pets.append(Pet(pet_name))
-            elif type_choice == 7:
-                pets.pop(Pet(pet_name))
             if len(pets) < 2:
-                print("\n\nCongratulations!!! You now have %d pet.\n\n" % len(pets))
+                print("\n\nCongratulations!!! You now have %d pet. Make your next selection.\n\n" % len(pets))
             elif len(pets) >= 2:
-                print("\n\nYou now have %d pets! \n\n" % len(pets))
+                print("\n\nYou now have %d pets! Make your next selection. \n\n" % len(pets))
         if choice == 2:
             for pet in pets:
                 pet.get_love()
@@ -113,6 +114,9 @@ def main():
         if choice == 6:
             for pet in pets:
                 pet.be_alive()
+        if choice == 7:
+            pets.pop()
+            print("\nYou have given your last pet up for adoption. You now have %d pets. \n" % len(pets))
         if choice == 8:
             print("You have now exited the game. Thank you.")
             exit()

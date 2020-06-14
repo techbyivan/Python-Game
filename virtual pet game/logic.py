@@ -5,7 +5,32 @@ from vp_game import CuddlyPet
 # Begin with no pets.
 pets = []
 
-pets_name = []
+pet_pic = [
+
+    '''
+ C A T                
+ /\_/\ \n           
+( o.o ) \n          
+ > ^ < \n           
+'''  ,                 
+
+ '''
+D O G                             .-.
+     (___________________________()6 `-,
+     (   ______________________   /''"`
+     //\\                      //\\
+ "" ""                     "" ""
+''',
+
+
+'''
+ B I R D
+ ,_
+>' )
+( ( \ 
+''|
+'''
+]
 
 main_menu = [  
     "Adopt a Pet",
@@ -55,9 +80,17 @@ def main():
             print("\nWhat type of pet would you like today?  \n")
             type_choice = get_user_choice(adoption_menu)
             if type_choice == 1:
+                print(pet_pic[1])
+            elif type_choice == 2:
+                print(pet_pic[2])
+            elif type_choice == 3:
+                print(pet_pic[0])
+            if type_choice == 1:
                 pets.append(Pet(pet_name))
             elif type_choice == 2:
-                pets.append(CuddlyPet(pet_name))
+                pets.append(Pet(pet_name))
+            elif type_choice == 3:
+                pets.append(Pet(pet_name))
             if len(pets) < 2:
                 print("\n\nCongratulations!!! You now have %d pet.\n\n" % len(pets))
             elif len(pets) >= 2:
@@ -65,6 +98,7 @@ def main():
         if choice == 2:
             for pet in pets:
                 pet.get_love()
+                print("Your pets have now been fed. Please refer to main menu.")
         if choice == 3:
             for pet in pets:
                 pet.eat_food()
@@ -84,3 +118,7 @@ def main():
 
 
 main()
+
+
+            # elif type_choice == 2:
+            #     pets.append(CuddlyPet(pet_name))

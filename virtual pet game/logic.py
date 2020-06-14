@@ -12,14 +12,14 @@ pet_pic = [
  /\_/\ \n           
 ( o.o ) \n          
  > ^ < \n           
-'''  ,                 
+  '''  ,                 
 
  '''
 D O G                             .-.
      (___________________________()6 `-,
      (   ______________________   /''"`
      //\\                      //\\
- "" ""                     "" ""
+     "" ""                     "" ""
 ''',
 
 
@@ -37,8 +37,9 @@ main_menu = [
     "Play with Pet",
     "Feed Pet",
     "View status of pets",
-    "Do nothing",
+    "Give pet a timeout",
     "Give a toy to all your pets",
+    "Give a pet up for adoption"
 ]
 
 adoption_menu = [   
@@ -91,6 +92,8 @@ def main():
                 pets.append(Pet(pet_name))
             elif type_choice == 3:
                 pets.append(Pet(pet_name))
+            elif type_choice == 7:
+                pets.pop(Pet(pet_name))
             if len(pets) < 2:
                 print("\n\nCongratulations!!! You now have %d pet.\n\n" % len(pets))
             elif len(pets) >= 2:
@@ -98,7 +101,6 @@ def main():
         if choice == 2:
             for pet in pets:
                 pet.get_love()
-                print("Your pets have now been fed. Please refer to main menu.")
         if choice == 3:
             for pet in pets:
                 pet.eat_food()
@@ -107,16 +109,16 @@ def main():
                 print(pet)
         if choice == 5:
             for pet in pets:
-                pet.get_toy(Toy())
+                pet.give_timeout()
         if choice == 6:
             for pet in pets:
                 pet.be_alive()
-        # if choice == 6:
+        if choice == 8:
+            print("You have now exited the game. Thank you.")
+            exit()
         #     for pet in pets:
-        #         pet.be_alive()
-            self.happiness += toy.use()
-
-
+        #         pet.get_toy(Toy())
+                # self.happiness += toy.use()
 main()
 
 

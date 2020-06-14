@@ -22,6 +22,10 @@ class Pet:
 
     def get_toy(self, toy):
         self.toys.append(toy)
+
+    def be_alive(self):
+        self.fullness -= self.hunger
+        self.happiness -= self.mopiness/2
     
     def __str__(self):
         return """
